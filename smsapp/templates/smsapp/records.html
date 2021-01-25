@@ -1,0 +1,73 @@
+{% extends 'smsapp/base.html' %}
+
+{% load static %}
+
+{% block title %} <title>Records</title> {% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+<div class="row">
+	<div class="col-md-12">
+		<h5>Records List</h5>
+		<hr>
+		<div class="card card-body">
+			
+			<table class="table table-sm">
+				<tr>
+					<th>Employment Number</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Other Name</th>
+					<th>Gender</th>
+					<th>DOB</th>
+					<th>Marital Status</th>
+					<th>Religion</th>
+					<th>Official Email</th>
+					<th>Personal Email</th>
+					<th>Mobile 1</th>
+					<th>Mobile 2</th>
+					<th>Bmc</th>
+					<th>Unit</th>
+					<th>Grade</th>
+					<th>Status</th>
+					<th>Date Added</th>
+					<th>Date Last Updated</th>
+					<th>Update</th>
+					<th>Delete</th>
+
+				</tr>
+				{% for record in recods %}
+				<tr>
+					<td>{{ record.EmpNumber }}</td>
+					<td>{{ record.FirstName }}</td>
+					<td>{{ record.LastName }}</td>
+					<td>{{ record.OtherName }}</td>
+					<td>{{ record.Gender }}</td>
+					<td>{{ record.DOB }}</td>
+					<td>{{ record.MaritalStatus }}</td>
+					<td>{{ record.Religion }}</td>
+					<td>{{ record.OfficialEmail }}</td>
+					<td>{{ record.PersonalEmail }}</td>
+					<td>{{ record.Mobile }}</td>
+					<td>{{ record.Mobile1 }}</td>
+					<td>{{ record.bmc }}</td>
+					<td>{{ record.unit }}</td>
+					<td>{{ record.grade }}</td>
+					<td>{{ record.status }}</td>
+					<td>{{ record.date_created }}</td>
+					<td>{{ record.date_updated }}</td>
+					<td><a class="btn btn-sm btn-info" href="">Update</a></td>
+					<td><a class="btn btn-sm btn-info" href="">Delete</a></td>
+					
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+	
+{% endblock %}

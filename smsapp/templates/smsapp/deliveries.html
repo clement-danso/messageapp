@@ -1,0 +1,49 @@
+{% extends 'smsapp/base.html' %}
+
+{% load static %}
+
+{% block title %} <title>Deliveries</title> {% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+<div class="row">
+	<div class="col-md-12">
+		<h5>List of Sent Messages</h5>
+		<hr>
+		<div class="card card-body">
+			
+			<table class="table">
+				<tr>
+					<th>Delivery Status</th>
+					<th>SMS Type</th>
+					<th>Recipient</th>
+					<th>Total Sent</th>
+					<th>Total Rejected</th>
+					<th>Credit Used</th>
+					<th>Credit Left</th>
+				</tr>
+				
+				{% for delivery in delivs %}
+				<tr>	
+					<td>{{ delivery.sms_status}}</td>
+					<td>{{ delivery.smstype}}</td>
+					<td>{{ delivery.recipient }}</td>
+					<td>{{ delivery.total_sent }}</td>
+					<td>{{ delivery.total_rejected }}</td>
+					<td>{{ delivery.credit_used }}</td>
+					<td>{{ delivery.credit_left }}</td>
+				</tr>
+				{% endfor %}
+				
+			</table>
+		</div>
+	</div>
+
+{% endblock %}
+
+

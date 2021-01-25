@@ -1,0 +1,40 @@
+{% extends 'smsapp/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %} <title>User Registration</title> {% endblock %}
+
+
+
+
+
+{% block content %}
+<style>
+.myform {
+  margin: 30px 550px;
+}
+</style>
+
+
+<div class="myform">
+    <form class="form-signin" method="POST">
+		{% csrf_token %}
+		
+		<br>
+      <div class="text-center mb-4">
+        
+        <h1 class="h3 mb-3 font-weight-normal">Register New User</h1>
+        
+      </div>
+
+     {{form|crispy}}
+     
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      
+     
+    </form>
+    
+</div>
+{% endblock %}
+
+

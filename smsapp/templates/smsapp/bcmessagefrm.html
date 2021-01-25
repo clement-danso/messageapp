@@ -1,0 +1,35 @@
+{% extends 'smsapp/base.html' %}
+
+{% load static %}
+
+{% block title %} <title>Broadcast Message Form</title> {% endblock %}
+
+
+
+
+
+{% block content %}
+
+<style>
+.myform {
+  margin: 70px 450px;
+}
+</style>
+
+
+<div class="myform">
+<div class="jumbotron">
+	<h3>Create a Broadcast Message</h3>
+	<br>
+<form action="" method="POST">
+  {% csrf_token %}
+	
+  {{fm.as_p}}
+  <button type="submit" class="btn btn-primary">Send Broadcast</button>
+  <a class="btn btn-primary" href="{% url 'home' %}">Cancel</a>
+</form>
+</div>
+</div>
+
+{% endblock %}
+

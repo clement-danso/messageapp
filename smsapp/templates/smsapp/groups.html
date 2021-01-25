@@ -1,0 +1,41 @@
+{% extends 'smsapp/base.html' %}
+
+{% load static %}
+
+{% block title %} <title>Groups</title> {% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+<div class="row">
+	<div class="col-md-12">
+		<h5>Group List</h5>
+		<hr>
+		<div class="card card-body">
+			
+			<table class="table">
+				<tr>
+					<th>Group Name</th>
+					<th>Update</th>
+					<th>Delete</th>
+
+				</tr>
+				{% for group in grps %}
+				<tr>
+					<td>{{ group.groupName }}</td>
+					<td><a class="btn btn-sm btn-info" href="">Update</a></td>
+					<td><a class="btn btn-sm btn-info" href="">Delete</a></td>
+					
+				</tr>
+				{% endfor %}
+				<a class="btn btn-primary btn-sm btn-block"  href="{% url 'creategroup' %}">Create New Group</a>
+			</table>
+		</div>
+	</div>
+
+{% endblock %}
+
